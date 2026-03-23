@@ -50,8 +50,28 @@ public:
         return l;
     }
 
+    int searchInsertion_lower_bount(vector<int>& nums, int target){
+        int n = nums.size();
+        int l = 0;
+        int r = n;
+        int mid = (l + r) / 2;
+        
+        while (l < r) {
+            if (nums[mid] < target) {
+                l = mid + 1;
+            }
+            else {
+                r = mid;
+            }
+            mid = (l + r) / 2;
+        }
+
+        return l;
+    }
+
+
     int searchInsert(vector<int>& nums, int target) {
-        return searchInsert_iteration(nums, target);
+        return searchInsertion_lower_bount(nums, target);
     }
 };
 // @lc code=end
