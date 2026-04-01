@@ -23,7 +23,7 @@ public:
         unordered_map<char, int> appear;
         int max_length = 1;
         while (right_index < s.length()) {
-            if (appear.find(s[right_index]) == appear.end()) {
+            if (!appear.count(s[right_index])) {
                 appear.insert(make_pair(s[right_index], right_index));
             }
             else {
